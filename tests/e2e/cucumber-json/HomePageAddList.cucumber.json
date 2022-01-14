@@ -1,0 +1,162 @@
+[
+  {
+    "description": "    I want to be able to add a to-do list when I log in successfully.",
+    "keyword": "Feature",
+    "name": "Home Page Add List",
+    "line": 1,
+    "id": "home-page-add-list",
+    "tags": [],
+    "uri": "HomePageAddList.feature",
+    "elements": [
+      {
+        "id": "home-page-add-list;successfully-added-new-list",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "successfully added new list",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I have logged in successfully",
+            "result": {
+              "status": "passed",
+              "duration": 646000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I click the plus sign button",
+            "result": {
+              "status": "passed",
+              "duration": 92000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter \"Monday schedule\" as the name of the list",
+            "result": {
+              "status": "passed",
+              "duration": 308000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Item",
+                      "Done"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "go for a walk",
+                      "No"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "buy milk after work",
+                      "No"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "eat breakfast",
+                      "No"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I enter the following items in the list",
+            "result": {
+              "status": "passed",
+              "duration": 1154000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click \"Done\" button",
+            "result": {
+              "status": "passed",
+              "duration": 593000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I should see a new list with the information I provided",
+            "result": {
+              "status": "passed",
+              "duration": 145000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "home-page-add-list;successfully-change-status-of-done-items-after-list-is-created",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "successfully change status of done items after list is created",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I have logged in successfully a second time",
+            "result": {
+              "status": "passed",
+              "duration": 1155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I See the list I created before",
+            "result": {
+              "status": "passed",
+              "duration": 31000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I click on a check box I should see a small loading symbol on a popup window",
+            "result": {
+              "status": "passed",
+              "duration": 556000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "it should say successfully updated",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

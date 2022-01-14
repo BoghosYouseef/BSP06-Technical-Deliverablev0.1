@@ -1,0 +1,153 @@
+[
+  {
+    "description": "    I want to be able to login to the website when I use correct credentials. \n    I also want to receive an error message when wrong credentials are provided.",
+    "keyword": "Feature",
+    "name": "User Login",
+    "line": 1,
+    "id": "user-login",
+    "tags": [],
+    "uri": "login.feature",
+    "elements": [
+      {
+        "id": "user-login;successful-login",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "successful login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on the login page and I provide correct credentials",
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I write \"admin123\" in user name box",
+            "result": {
+              "status": "passed",
+              "duration": 233000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I write \"Admin@123\" in password box",
+            "result": {
+              "status": "passed",
+              "duration": 234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click the \"submit\" button",
+            "result": {
+              "status": "passed",
+              "duration": 94000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I will see a green box that says \"Login Successful!\"",
+            "result": {
+              "status": "passed",
+              "duration": 1519000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I will be redirected to the admin page.",
+            "result": {
+              "status": "passed",
+              "duration": 942000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-login;failed-login",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "failed login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "I am on the login page I provide incorrect credentials",
+            "result": {
+              "status": "passed",
+              "duration": 96000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I write \"geroge123\" in user name box",
+            "result": {
+              "status": "passed",
+              "duration": 240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I write \"Geroge@123\" in password box",
+            "result": {
+              "status": "passed",
+              "duration": 250000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click the \"submit\" button",
+            "result": {
+              "status": "passed",
+              "duration": 92000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I will see a red box that says \"Login Failed!\"",
+            "result": {
+              "status": "passed",
+              "duration": 1518000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I will remain on the login page",
+            "result": {
+              "status": "passed",
+              "duration": 6000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

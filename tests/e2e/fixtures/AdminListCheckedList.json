@@ -1,0 +1,10 @@
+{
+        "List Name": "Monday schedule",
+        "id":"ul0",
+        "List Items": {
+                "go for a walk": "Yes",
+                "buy milk after work": "No",
+                "eat breakfast": "No"
+                },
+        "isSaved": true
+}
