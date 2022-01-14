@@ -1,13 +1,14 @@
 Given("I have logged in successfully", () => {
-    cy.visit("http://localhost:8080/users/admin/homePage")
-    var onPageLoadGetRequest = false
-    if(!onPageLoadGetRequest){
+    
+    var onPageLoadGetRequest = 1
+    if(onPageLoadGetRequest == 1){
         cy.intercept("**/api/users/admin/homepage&Query=ALL_LISTS",(req) => {
             req.reply({
                 "statuscode": 200,
                 "isEmpty": true})
     })
         }
+    cy.visit("http://localhost:8080/users/admin/homePage")
 })
 
 
@@ -40,6 +41,7 @@ And("I enter the following items in the list",(dataTable) => {
 })
 
 And('I click "Done" button', () => {
+    
     cy.intercept("**/api/users/admin/homepage",(req) => {
         req.reply({
             "statuscode": 200,
@@ -72,17 +74,17 @@ Then("I should see a new list with the information I provided", () => {
 })
 
 Given("I have logged in successfully a second time", () => {
-    var onPageLoadGetRequest = true
-    cy.visit("http://localhost:8080/users/admin/homePage")
+    var onPageLoadGetRequest = 2
+    
 
-    if(onPageLoadGetRequest){
+    if(onPageLoadGetRequest == 2){
     cy.intercept("**/api/users/admin/homepage&Query=ALL_LISTS",(req) => {
         req.reply({
             "statuscode": 200,
             fixture: 'AdminList.json'
         })
     }).as("ListRequestAfterLogin")
-
+    cy.visit("http://localhost:8080/users/admin/homePage")
     cy.wait("@ListRequestAfterLogin")
     }
 })
@@ -94,18 +96,22 @@ And("I See the list I created before", () => {
 
     cy.get("#lists").children("div").children("ul").children("li").first().should("have.text", "go for a walk")
     cy.get("#lists").children("div").children("ul").children("li").last().should("have.text", "eat breakfast")
+    cy.log("REACHING INSIDE And SATEMENT")
+
 }) 
 
 
 When("I click on a check box I should see a small loading symbol on a popup window", () => {
-    cy.get("input[type='checkbox']").should("be.visible").first().click()
-
     cy.intercept("**/api/users/admin/homepage&listCheckBoxChecked",(req) => {
         req.reply({
             "statuscode": 200,
             fixture: 'AdminListCheckedList.json'
         })
     }).as("AdminListCheckedList")
+    cy.log("REACHING INSIDE When SATEMENT1")
+    cy.get("input[type='checkbox']").should("be.visible").first().check()
+    cy.log("REACHING INSIDE WHEN SATEMENT2")
+    
 
     cy.get('modal[id="popupLoading"]').children().first().should('have.text', 'Loading...')
     cy.wait("@AdminListCheckedList")
